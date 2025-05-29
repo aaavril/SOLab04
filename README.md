@@ -316,4 +316,10 @@ El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **Powe
 3. Ejecutar el script con el comando:
    ```powershell
    .\reto4.ps1
+   ```
+4. Si no permite ejecutar el comando por permisos utilizar
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+```
 
