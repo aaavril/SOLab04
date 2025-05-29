@@ -126,7 +126,7 @@
   case ... in ... esac
 ````
 
-* **Ciclos:**
+- **Ciclos:**
 
   ```bash
   for ... in ...; do ...; done
@@ -134,7 +134,7 @@
   until ...; do ...; done
   ```
 
-* **Otros:**
+- **Otros:**
 
   ```bash
   select ... in ...; do ...; done
