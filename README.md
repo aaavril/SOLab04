@@ -71,25 +71,8 @@
 - **Bash:** `man`, `info`, `whatis`
 - **PowerShell:** `Get-Command`, `Get-Help`, `Get-Member`
 
-### Futuro
-
-- **PowerShell Core (v6+):**
-  - Enfoque futuro de Microsoft.
-  - Windows PowerShell (hasta 5.1) solo recibe parches de seguridad.
-
 
 ## Comandos Básicos, Estructuras de Control, Ciclos y Funciones
-
-### Naturaleza y Manejo de Datos
-
-- **Bash:**
-  - Usa texto como formato principal.
-  - Emplea pipes (`|`) para redirigir salida/entrada entre comandos.
-  
-- **PowerShell:**
-  - Maneja objetos directamente.
-  - Cmdlets como `Get-Content`, `Select-String`.
-
 ### Comandos Básicos
 
 #### Bash
@@ -165,18 +148,11 @@
   }
   ```
 
-### Scripts
-
-* **Bash:** `.sh`
-
-* **PowerShell:** `.ps1`
-
-* **Recursos para practicar:**
+### Recursos para practicar:**
 
   * [W3Schools Bash](https://www.w3schools.com/bash/)
   * [Microsoft Learn PowerShell](https://learn.microsoft.com/en-us/training/modules/introduction-to-powershell/)
 
----
 
 ## Cuestionario Breve
 
@@ -215,12 +191,6 @@
 * También se puede usar notación numérica: `chmod 777 archivo`
 
 ### 4. ¿Cómo se hace un bucle `for` en PowerShell?
-
-Basándonos en la información de las fuentes, aunque no se presenta explícitamente un bucle `for` tradicional (como en otros lenguajes con inicialización, condición e incremento), PowerShell ofrece otras estructuras de bucle más comunes y idiomáticas, como `ForEach` y el cmdlet `ForEach-Object`.
-
-**Bucle `ForEach` para iterar colecciones**
-
-Una fuente muestra un ejemplo claro de cómo iterar sobre elementos de una colección (en este caso, líneas de un archivo) utilizando `ForEach`:
 
 ```powershell
 ForEach ($d in Get-Content directorios)
@@ -338,4 +308,12 @@ El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **Powe
       }
   } while ($opcion -ne "4")
   ```
+
+## Cómo Ejecutarlos
+
+1. Abrir PowerShell en Windows.
+2. Navegar a la carpeta donde se encuentra el archivo `reto4.ps1`.
+3. Ejecutar el script con el comando:
+   ```powershell
+   .\reto4.ps1
 
