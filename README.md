@@ -218,3 +218,133 @@
 * También se puede usar notación numérica: `chmod 777 archivo`
 
 ---
+
+## 4. ¿Cómo se hace un bucle `for` en PowerShell?
+
+Basándonos en la información de las fuentes, aunque no se presenta explícitamente un bucle `for` tradicional (como en otros lenguajes con inicialización, condición e incremento), PowerShell ofrece otras estructuras de bucle más comunes y idiomáticas, como `ForEach` y el cmdlet `ForEach-Object`.
+
+### Bucle `ForEach` para iterar colecciones
+
+Una fuente muestra un ejemplo claro de cómo iterar sobre elementos de una colección (en este caso, líneas de un archivo) utilizando `ForEach`:
+
+```powershell
+ForEach ($d in Get-Content directorios)
+{
+    mkdir $d
+}
+````
+
+**Explicación del ejemplo:**
+
+* `Get-Content directorios` lee el contenido del archivo `directorios`, devolviendo una colección de líneas.
+* La sintaxis `ForEach ($d in ...)` itera sobre cada elemento de la colección. Cada línea se asigna a la variable `$d`.
+* El bloque entre `{}` se ejecuta por cada elemento. En este caso, `mkdir $d` crea un directorio con el nombre de cada línea.
+
+### Cmdlet `ForEach-Object` con canalización
+
+PowerShell se destaca por su capacidad de trabajar con objetos y canalizaciones (`|`). El cmdlet `ForEach-Object` permite realizar acciones sobre cada objeto que fluye a través de una canalización.
+
+**Ejemplo general:**
+
+```powershell
+ComandoQueProduceColeccion | ForEach-Object { 
+    # Acción por cada objeto 
+    $_ 
+}
+```
+
+**Notas:**
+
+* `$_` representa el objeto actual en la iteración.
+* Desde PowerShell 7 se puede usar `ForEach-Object -Parallel` para ejecutar acciones en paralelo.
+
+---
+
+## 5. ¿Cuál es la diferencia entre `$HOME` en Bash y `$Env:USERPROFILE` en PowerShell?
+
+Ambas variables representan el **directorio personal del usuario**, pero varían en sintaxis y entorno nativo.
+
+### `$HOME` en Bash
+
+* Es una **variable de entorno estándar en Bash**.
+* Representa el **directorio personal del usuario**.
+* Se accede con `$HOME`.
+* Típicamente contiene archivos de configuración como `.bashrc`, `.profile`, etc.
+* Común en sistemas **Linux y macOS**.
+
+### `$Env:USERPROFILE` en PowerShell
+
+* PowerShell accede a variables de entorno mediante el **proveedor especial `Env:`**.
+* Se usa `$Env:USERPROFILE` para obtener el directorio personal del usuario en **Windows**.
+* La variable `USERPROFILE` apunta típicamente a `C:\Users\TUNOMBREDEUSUARIO`.
+* Otras variables propias de PowerShell se acceden como `$Profile`, `$PSVersionTable`, etc.
+* En **Linux/macOS usando PowerShell**, se puede acceder a `$HOME` como `$Env:HOME`.
+
+### Diferencia Clave
+
+| Característica    | Bash            | PowerShell                      |
+| ----------------- | --------------- | ------------------------------- |
+| Variable          | `$HOME`         | `$Env:USERPROFILE` (en Windows) |
+| Sintaxis          | `$VARIABLENAME` | `$Env:VARIABLENAME`             |
+| Acceso a entorno  | Directo         | A través del proveedor `Env:`   |
+| Sistema operativo | Linux/macOS     | Windows (y también Linux/macOS) |
+
+---
+
+## Desarrollo (Retos)
+
+El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **PowerShell**.
+
+### Reto 1: Información del sistema
+
+* **Objetivo:** Mostrar información del sistema.
+* **Comando PowerShell:**
+
+  ```powershell
+  Get-ComputerInfo
+  ```
+
+### Reto 2: Gestión de procesos
+
+* **Objetivo:** Listar procesos y finalizar uno.
+* **Comandos PowerShell:**
+
+  ```powershell
+  Get-Process                # Listar todos los procesos
+  Stop-Process -Id <ID>      # Finalizar proceso por ID
+  ```
+
+### Reto 3: Automatización
+
+* **Objetivo:** Crear carpetas con nombres basados en la fecha.
+* **Ejemplo de script PowerShell:**
+
+  ```powershell
+  $fecha = Get-Date -Format "yyyy-MM-dd"
+  New-Item -ItemType Directory -Name "Backup_$fecha"
+  ```
+
+### Reto 4 (Opcional): Script interactivo
+
+* **Objetivo:** Crear un menú que permita seleccionar y ejecutar funciones del script.
+* **Ejemplo de estructura base:**
+
+  ```powershell
+  do {
+      Write-Host "1. Mostrar info del sistema"
+      Write-Host "2. Listar procesos"
+      Write-Host "3. Crear carpeta con fecha"
+      Write-Host "4. Salir"
+      $opcion = Read-Host "Selecciona una opción"
+
+      switch ($opcion) {
+          "1" { Get-ComputerInfo }
+          "2" { Get-Process }
+          "3" {
+              $fecha = Get-Date -Format "yyyy-MM-dd"
+              New-Item -ItemType Directory -Name "Backup_$fecha"
+          }
+      }
+  } while ($opcion -ne "4")
+  ```
+
