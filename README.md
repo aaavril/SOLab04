@@ -219,11 +219,11 @@
 
 ---
 
-## 4. ¿Cómo se hace un bucle `for` en PowerShell?
+### 4. ¿Cómo se hace un bucle `for` en PowerShell?
 
 Basándonos en la información de las fuentes, aunque no se presenta explícitamente un bucle `for` tradicional (como en otros lenguajes con inicialización, condición e incremento), PowerShell ofrece otras estructuras de bucle más comunes y idiomáticas, como `ForEach` y el cmdlet `ForEach-Object`.
 
-### Bucle `ForEach` para iterar colecciones
+**Bucle `ForEach` para iterar colecciones**
 
 Una fuente muestra un ejemplo claro de cómo iterar sobre elementos de una colección (en este caso, líneas de un archivo) utilizando `ForEach`:
 
@@ -260,11 +260,11 @@ ComandoQueProduceColeccion | ForEach-Object {
 
 ---
 
-## 5. ¿Cuál es la diferencia entre `$HOME` en Bash y `$Env:USERPROFILE` en PowerShell?
+### 5. ¿Cuál es la diferencia entre `$HOME` en Bash y `$Env:USERPROFILE` en PowerShell?
 
 Ambas variables representan el **directorio personal del usuario**, pero varían en sintaxis y entorno nativo.
 
-### `$HOME` en Bash
+**`$HOME` en Bash**
 
 * Es una **variable de entorno estándar en Bash**.
 * Representa el **directorio personal del usuario**.
@@ -272,7 +272,7 @@ Ambas variables representan el **directorio personal del usuario**, pero varían
 * Típicamente contiene archivos de configuración como `.bashrc`, `.profile`, etc.
 * Común en sistemas **Linux y macOS**.
 
-### `$Env:USERPROFILE` en PowerShell
+**`$Env:USERPROFILE` en PowerShell**
 
 * PowerShell accede a variables de entorno mediante el **proveedor especial `Env:`**.
 * Se usa `$Env:USERPROFILE` para obtener el directorio personal del usuario en **Windows**.
@@ -280,7 +280,7 @@ Ambas variables representan el **directorio personal del usuario**, pero varían
 * Otras variables propias de PowerShell se acceden como `$Profile`, `$PSVersionTable`, etc.
 * En **Linux/macOS usando PowerShell**, se puede acceder a `$HOME` como `$Env:HOME`.
 
-### Diferencia Clave
+**Diferencia Clave**
 
 | Característica    | Bash            | PowerShell                      |
 | ----------------- | --------------- | ------------------------------- |
@@ -289,13 +289,12 @@ Ambas variables representan el **directorio personal del usuario**, pero varían
 | Acceso a entorno  | Directo         | A través del proveedor `Env:`   |
 | Sistema operativo | Linux/macOS     | Windows (y también Linux/macOS) |
 
----
 
-## Desarrollo (Retos)
+# Desarrollo (Retos)
 
 El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **PowerShell**.
 
-### Reto 1: Información del sistema
+## Reto 1: Información del sistema
 
 * **Objetivo:** Mostrar información del sistema.
 * **Comando PowerShell:**
@@ -304,7 +303,7 @@ El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **Powe
   Get-ComputerInfo
   ```
 
-### Reto 2: Gestión de procesos
+## Reto 2: Gestión de procesos
 
 * **Objetivo:** Listar procesos y finalizar uno.
 * **Comandos PowerShell:**
@@ -314,7 +313,7 @@ El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **Powe
   Stop-Process -Id <ID>      # Finalizar proceso por ID
   ```
 
-### Reto 3: Automatización
+## Reto 3: Automatización
 
 * **Objetivo:** Crear carpetas con nombres basados en la fecha.
 * **Ejemplo de script PowerShell:**
@@ -324,7 +323,7 @@ El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **Powe
   New-Item -ItemType Directory -Name "Backup_$fecha"
   ```
 
-### Reto 4 (Opcional): Script interactivo
+## Reto 4 (Opcional): Script interactivo
 
 * **Objetivo:** Crear un menú que permita seleccionar y ejecutar funciones del script.
 * **Ejemplo de estructura base:**
