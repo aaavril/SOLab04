@@ -309,7 +309,7 @@ El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **Powe
   } while ($opcion -ne "4")
   ```
 
-## Cómo Ejecutar un script
+## Cómo Ejecutar un Script
 
 1. Abrir PowerShell en Windows.
 2. Navegar a la carpeta donde se encuentra el archivo `reto4.ps1`.
