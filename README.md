@@ -318,8 +318,7 @@ El entorno de ejecución fue **local (PC personal)** utilizando el CLI de **Powe
    .\reto4.ps1
    ```
 4. Si no permite ejecutar el comando por permisos utilizar
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-
-```
+  ```powershell
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+  ```
 
