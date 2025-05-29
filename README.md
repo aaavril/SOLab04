@@ -124,8 +124,8 @@
   ```bash
   if ... then ... [ elif ... then ... ] [ else ... ] fi
   case ... in ... esac
-````
-
+  
+ 
 - **Ciclos:**
 
   ```bash
@@ -133,7 +133,7 @@
   while ...; do ...; done
   until ...; do ...; done
   ```
-
+  
 - **Otros:**
 
   ```bash
