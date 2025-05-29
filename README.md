@@ -227,6 +227,7 @@ ForEach ($d in Get-Content directorios)
 {
     mkdir $d
 }
+```
 
 **Explicación del ejemplo:**
 
@@ -245,7 +246,7 @@ ComandoQueProduceColeccion | ForEach-Object {
     # Acción por cada objeto 
     $_ 
 }
-
+```
 **Notas:**
 
 * `$_` representa el objeto actual en la iteración.
