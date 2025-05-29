@@ -197,8 +197,6 @@
 
 * **PowerShell equivalente:** `Get-ChildItem`
 
----
-
 ### 2. ¿Cómo se declara una variable en PowerShell?
 
 * Se usa `$` seguido del nombre de la variable.
@@ -211,14 +209,10 @@
   $PSVersionTable
   ```
 
----
-
 ### 3. ¿Qué comando en Bash da permisos de ejecución a un archivo?
 
 * Comando: `chmod +x archivo`
 * También se puede usar notación numérica: `chmod 777 archivo`
-
----
 
 ### 4. ¿Cómo se hace un bucle `for` en PowerShell?
 
@@ -233,7 +227,6 @@ ForEach ($d in Get-Content directorios)
 {
     mkdir $d
 }
-````
 
 **Explicación del ejemplo:**
 
@@ -252,14 +245,11 @@ ComandoQueProduceColeccion | ForEach-Object {
     # Acción por cada objeto 
     $_ 
 }
-```
 
 **Notas:**
 
 * `$_` representa el objeto actual en la iteración.
 * Desde PowerShell 7 se puede usar `ForEach-Object -Parallel` para ejecutar acciones en paralelo.
-
----
 
 ### 5. ¿Cuál es la diferencia entre `$HOME` en Bash y `$Env:USERPROFILE` en PowerShell?
 
