@@ -1,6 +1,8 @@
-# Pre Laboratorio: Diferencias entre Bash y PowerShell
+# Pre Laboratorio
 
-## 1. Naturaleza y Base
+## Diferencias entre Bash y PowerShell
+
+### Naturaleza y Base
 
 - **Bash (Bourne Again SHell):**
   - Intérprete de línea de comandos por defecto en la mayoría de distribuciones de Linux (Ubuntu, Debian, Mint, etc.).
@@ -10,7 +12,7 @@
   - CLI basada en .NET CLR (Common Language Runtime).
   - Devuelve **objetos**, no texto plano, ideal para automatización en sistemas Windows y otras plataformas.
 
-## 2. Manejo de Datos y Salida
+### Manejo de Datos y Salida
 
 - **Bash:**
   - Trabaja con texto.
@@ -20,7 +22,7 @@
   - Trabaja con objetos.
   - Los `cmdlets` devuelven objetos, permitiendo un control más fino y potente.
 
-## 3. Comandos y Estructura
+### Comandos y Estructura
 
 - **Bash:**
   - Comandos `built-in` y ejecutables del sistema.
@@ -31,7 +33,7 @@
   - Usa `cmdlets` con formato `Verbo-Nombre`, ej.: `Get-Command`.
   - Extensible, permite crear nuevos cmdlets.
   
-## 4. Propósito y Enfoque
+### Propósito y Enfoque
 
 - **Bash:** 
   - Scripting y automatización general en sistemas Unix/Linux.
@@ -39,12 +41,12 @@
 - **PowerShell:**
   - Administración y automatización en Windows, servidores y servicios Microsoft.
 
-## 5. Plataformas Soportadas
+### Plataformas Soportadas
 
 - **Bash:** Nativo en Linux.
 - **PowerShell:** Multiplataforma (Windows, MacOS, varias distribuciones Linux).
 
-## 6. Scripting y Funcionalidad Adicional
+### Scripting y Funcionalidad Adicional
 
 - **Bash:**
   - Archivos `.sh`
@@ -55,7 +57,7 @@
   - Incluye operadores, vectores, `hashtables`, funciones avanzadas.
   - Uso de alias y perfiles de usuario.
 
-## 7. Seguridad
+### Seguridad
 
 - **Bash/Linux:**
   - Seguridad mediante permisos (`sudo`, `chmod`).
@@ -64,22 +66,21 @@
   - Políticas de ejecución (`Restricted`, `RemoteSigned`, etc.)
   - PowerShell Core mejora seguridad sobre versiones anteriores.
 
-## 8. Ayuda y Documentación
+### Ayuda y Documentación
 
 - **Bash:** `man`, `info`, `whatis`
 - **PowerShell:** `Get-Command`, `Get-Help`, `Get-Member`
 
-## 9. Futuro
+### Futuro
 
 - **PowerShell Core (v6+):**
   - Enfoque futuro de Microsoft.
   - Windows PowerShell (hasta 5.1) solo recibe parches de seguridad.
 
----
 
 ## Comandos Básicos, Estructuras de Control, Ciclos y Funciones
 
-### 1. Naturaleza y Manejo de Datos
+### Naturaleza y Manejo de Datos
 
 - **Bash:**
   - Usa texto como formato principal.
@@ -89,7 +90,7 @@
   - Maneja objetos directamente.
   - Cmdlets como `Get-Content`, `Select-String`.
 
-### 2. Comandos Básicos
+### Comandos Básicos
 
 #### Bash
 
@@ -116,7 +117,7 @@
 - **Ayuda:**
   - `Get-Command`, `Get-Help`, `Get-Member`
 
-### 3. Estructuras de Control y Ciclos (Scripting)
+### Estructuras de Control y Ciclos (Scripting)
 
 #### Bash
 
@@ -145,7 +146,7 @@
 * Usa `if`, `else`, `ForEach-Object`, operadores lógicos `&&`, `||`, y ternario `?:`.
 * Permite automatizar flujos complejos con orientación a objetos.
 
-### 4. Funciones
+### Funciones
 
 * **Bash:**
 
@@ -164,7 +165,7 @@
   }
   ```
 
-### 5. Scripts
+### Scripts
 
 * **Bash:** `.sh`
 
